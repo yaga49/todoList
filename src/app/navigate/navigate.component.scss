@@ -1,3 +1,17 @@
-.d-grid {
-  margin-top: 10px;
+.btn-group-vertical{
+
+  width: 100%;
+  vertical-align: top;
+  button{
+    border-radius: 0;
+
+  }
+}
+.main{
+  width: 40vh;
+  height: 100%;
+  background: #0d6efd;
+  .link{
+    margin-top: 100%;
+  }
 }
