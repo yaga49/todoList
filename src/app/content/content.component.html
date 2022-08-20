@@ -2,13 +2,27 @@
   <h3>Задачи</h3>
   <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping">@</span>
-    <input type="text" class="form-control" placeholder="Добавить задачу" aria-label="Username" aria-describedby="addon-wrapping">
+    <input [(ngModel)]="name" type="text" class="form-control" placeholder="Добавить задачу" aria-label="Username"
+           aria-describedby="addon-wrapping">
 
   </div>
-  <div >
-    <span class="input-group-text" id="addon-wrapping"><button type="button" class="btn btn-secondary">Добавить</button></span>
+  <div>
+    <span class="input-group-text" id="addon-wrapping" ><button type="button" class="btn btn-secondary" (click)="toggle()">Добавить</button></span>
 
 
+  </div>
+  <div *ngFor = "let data of toDoData; let i = index" class="border border-dark border-2 rounded ">
+
+    <div *ngIf="visible" >
+
+      <p >задачи: {{data.title}}</p>
+
+      <div class="margin-left-md">
+        <button type="button" class="btn btn-success ">Выполнить</button>
+        <button type="button" class="btn btn-danger" (click)="removeList(data.id)">Удалить</button>
+      </div>
+
+    </div>
   </div>
 
 </div>
