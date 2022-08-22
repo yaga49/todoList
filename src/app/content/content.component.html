@@ -7,22 +7,22 @@
 
   </div>
   <div>
-    <span class="input-group-text" id="addon-wrapping" ><button type="button" class="btn btn-secondary" (click)="toggle()">Добавить</button></span>
+    <span class="input-group-text" id="addon-wrapping" ><button type="button" class="btn btn-secondary" (click)="clickAdd()">Добавить</button></span>
 
 
   </div>
-  <div *ngFor = "let data of toDoData; let i = index" class="border border-dark border-2 rounded ">
+  <div *ngFor = "let data of todoList; let i = index" class="border border-dark border-2 rounded ">
 
-    <div *ngIf="visible" >
+
 
       <p >задачи: {{data.title}}</p>
 
       <div class="margin-left-md">
         <button type="button" class="btn btn-success ">Выполнить</button>
-        <button type="button" class="btn btn-danger" (click)="removeList(data.id)">Удалить</button>
+        <button type="button" class="btn btn-danger" (click)="deleteList(data.id)">Удалить</button>
       </div>
 
-    </div>
+
   </div>
 
 </div>

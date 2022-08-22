@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigateComponent } from './navigate/navigate.component';
 import { ContentComponent } from './content/content.component';
+import {ServiceService} from "./services/service.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ContentComponent } from './content/content.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

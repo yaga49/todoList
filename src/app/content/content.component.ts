@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {todoData} from "../models/todoData";
-import {data} from "../data/data";
+import {ServiceService} from "../services/service.service";
+
+
 
 
 
@@ -11,36 +13,24 @@ import {data} from "../data/data";
 })
 export class ContentComponent implements OnInit {
 
-  constructor() {
+  constructor(private svc : ServiceService) {
+
   }
+  todoList = this.svc.toDoData
+  name: string = ""
 
   ngOnInit(): void {
   }
-  toDoData: todoData[] = []
-  visible: boolean = false
-  count: number = 0
-  name: string = ""
 
-  toggle() {
 
-    this.toDoData.push(
-      {
-        title: this.name,
-        complete: false,
-        id: this.count
-      }
-    )
-    if (this.name) {
 
-      this.visible = true
-    }
-    this.count++
+
+
+  clickAdd() {
+    this.svc.toggle(this.name)
+  }
+  deleteList(id: number){
+    this.svc.removeList(id)
   }
 
-  removeList(id: number){
-    for(let i = 0; i < this.toDoData.length; i++){
-      this.toDoData[i].id = i
-    }
-    this.toDoData.splice(id,1)
-  }
 }
