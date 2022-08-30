@@ -8,18 +8,29 @@ import { HeaderComponent } from './header/header.component';
 import { NavigateComponent } from './navigate/navigate.component';
 import { ContentComponent } from './content/content.component';
 import {ServiceService} from "./services/service.service";
+import {RouterModule, Routes} from "@angular/router";
+import { ContentMainComponent } from './content/content-main/content-main.component';
+import { CompletedComponent } from './content/completed/completed.component';
+
+const appRoutes: Routes =[
+  { path: '', component: ContentComponent},
+  { path: 'completed', component: CompletedComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavigateComponent,
-    ContentComponent
+    ContentComponent,
+    ContentMainComponent,
+    CompletedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]
