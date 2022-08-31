@@ -1,0 +1,18 @@
+.cont{
+  margin-top: 15px;
+  padding-left: 15px;
+  width: 160vh;
+  display: block;
+  .btn{
+    margin: auto;
+  }
+  .border{
+    margin-top: 10px;
+    background: green;
+  }
+  .scroll{
+    overflow-y: scroll;
+    height: 350px;
+  }
+
+}

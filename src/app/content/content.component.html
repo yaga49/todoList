@@ -11,18 +11,16 @@
 
 
   </div>
-  <div *ngFor = "let data of todoList; let i = index" class="border border-dark border-2 rounded ">
-
-
-
+  <div class="scroll">
+    <div *ngFor = "let data of todoList; let i = index" class="border border-dark border-2 rounded ">
       <p >задачи: {{data.title}}</p>
 
       <div class="margin-left-md">
-        <button type="button" class="btn btn-success ">Выполнить</button>
+        <button type="button" class="btn btn-success " (click)="completedList(data.id)">Выполнить</button>
         <button type="button" class="btn btn-danger" (click)="deleteList(data.id)">Удалить</button>
       </div>
 
-
+    </div>
   </div>
 
 </div>

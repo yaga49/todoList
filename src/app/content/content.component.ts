@@ -17,6 +17,7 @@ export class ContentComponent implements OnInit {
 
   }
   todoList = this.svc.toDoData
+  completedTodoList = this.svc.completedTodoList
   name: string = ""
 
   ngOnInit(): void {
@@ -32,5 +33,7 @@ export class ContentComponent implements OnInit {
   deleteList(id: number){
     this.svc.removeList(id)
   }
-
+  completedList(id: number){
+    this.svc.completedList(id)
+  }
 }

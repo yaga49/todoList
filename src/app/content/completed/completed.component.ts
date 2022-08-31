@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServiceService} from "../../services/service.service";
 
 @Component({
   selector: 'app-completed',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompletedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private svc : ServiceService) { }
+  completedTodoList = this.svc.completedTodoList
+
 
   ngOnInit(): void {
   }
